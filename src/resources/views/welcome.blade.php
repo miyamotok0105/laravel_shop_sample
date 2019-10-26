@@ -82,13 +82,20 @@
                     Laravel
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <form action="{{ asset('pay') }}" method="POST">
+                    {{ csrf_field() }}
+                 <script
+                     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                     data-key="{{ env('STRIPE_KEY') }}"
+                     data-amount="100"
+                     data-name="Stripe決済デモ"
+                     data-label="決済をする"
+                     data-description="これはデモ決済です"
+                     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                     data-locale="auto"
+                     data-currency="JPY">
+                 </script>
+                </form>
             </div>
         </div>
     </body>
