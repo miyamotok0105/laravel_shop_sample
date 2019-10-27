@@ -435,6 +435,19 @@ php artisan make:controller BootstrapController
 ```
 
 
+# 検索
+
+```
+php artisan make:migration create_shops_table
+php artisan migrate
+php artisan make:seeder ShopsTableSeeder
+php artisan db:seed --class=ShopsTableSeeder
+```
+
+
+php artisan make:controller SearchController
+
+
 
 
 # 参考

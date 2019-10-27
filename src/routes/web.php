@@ -24,3 +24,6 @@ Route::get('/bootstrap-container', 'BootstrapController@container');
 Route::get('/bootstrap-grid', 'BootstrapController@grid');
 
 Route::post('/pay', 'PaymentController@pay');
+
+//検索機能
+Route::get('/paginate', 'SearchController@index')->name('search.index');
