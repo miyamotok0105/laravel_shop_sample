@@ -388,6 +388,54 @@ $(function() {
 </html>
 ```
 
+# デザイン
+
+
+
+
+```
+#bootstrap-sassを消す
+npm uninstall --save bootstrap-sass
+# bootstrap-sassを消してbootstrapとpopper.jsを入れる
+npm install --save bootstrap
+npm install --save popper.j
+```
+
+
+```:resource/asset/js/bootstrap.js
+try {
+    window.$ = window.jQuery = require('jquery');
+
+    // require('bootstrap-sass');
+    require('bootstrap');
+} catch (e) {}
+```
+
+```:resources/assets/sass/app.scss
+// Bootstrap
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap/scss/bootstrap";
+```
+
+```:resources/assets/sass/_variables.scss
+// Typography
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$font-family-sans-serif: "Raleway", sans-serif;
+// $font-size-base: 14px;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+$text-color: #636b6f;
+```
+
+
+
+
+```
+php artisan make:controller BootstrapController
+```
+
+
+
 
 # 参考
 

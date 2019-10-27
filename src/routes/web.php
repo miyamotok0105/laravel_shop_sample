@@ -18,4 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/bootstrap', 'BootstrapController@index')->name('bootstrap');
+Route::get('/bootstrap-container', 'BootstrapController@container');
+Route::get('/bootstrap-grid', 'BootstrapController@grid');
+
 Route::post('/pay', 'PaymentController@pay');
