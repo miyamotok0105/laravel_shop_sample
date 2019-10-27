@@ -27,3 +27,6 @@ Route::post('/pay', 'PaymentController@pay');
 
 //検索機能
 Route::get('/paginate', 'SearchController@index')->name('search.index');
+Route::get('/paginateSimple', 'SearchController@indexSimple')->name('search.index');
+
+

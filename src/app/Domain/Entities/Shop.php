@@ -36,21 +36,4 @@ class Shop
         return $this->name;
     }
 
-    /**
-     * @return Collection
-     */
-    // public function getGroupIds(): Collection
-    // {
-    //     return $this->groupIds;
-    // }
-    /**
-     * @param array|Collection $groupIds 検査対象のグループID
-     * @return bool すべて所持していればtrue
-     */
-    // public function hasGroups($groupIds): bool
-    // {
-    //     $groupIdsGiven = collect($groupIds);
-    //     $groupIdsDiff = $groupIdsGiven->diff($this->groupIds);
-    //     return $groupIdsDiff->count() === 0;
-    // }
 }

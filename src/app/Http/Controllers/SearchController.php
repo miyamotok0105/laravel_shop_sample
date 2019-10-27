@@ -27,8 +27,6 @@ class SearchController extends Controller
             $shops = $this->shopRepository->findByName($keyword);
 
         }
-        \Log::info("==$shops==");
-        
 
         //検索フォームへ
         return view('search.shopIndex',[
@@ -36,7 +34,27 @@ class SearchController extends Controller
             'keyword' => $keyword,
             ]);
     }
+
+    public function indexSimple(Request $request)
+    {
+        //キーワードを取得
+        $keyword = $request->input('keyword');
+        $shops = null;
+
+        if(empty($keyword) == false)
+        {
+            // $shop = $this->shopRepository->find($keyword);
+            $shops = $this->shopRepository->findByName($keyword);
+
+        }
+        //検索フォームへ
+        return view('search.shopSimpleIndex',[
+            'shops' => $shops,
+            'keyword' => $keyword,
+            ]);
+    }
 }
+
 
 
     // @if($shop != null)
