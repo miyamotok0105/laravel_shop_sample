@@ -5,6 +5,8 @@
 laravel v5.5.48
 ```
 
+vue+blade
+
 
 
 composer install

@@ -8,3 +8,17 @@
 // Bootstrap
 // @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "~bootstrap/scss/bootstrap";
+
+
+$item-border: #B1B1B1;
+
+.item-box {
+    transition: ease-in .1s;
+
+    &:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.2);
+        margin: 1px;
+        border: 2px solid $item-border;
+    }
+}
+

@@ -16,7 +16,25 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('load-button', require('./components/molecules/LoadButton.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    methods: {
+    loadData() {
+      this.$http.get('/echo/js/?delay=2&js=', {
+        before: () => {
+          this.loading = true;
+        }
+      }).then(response => {
+        // Deal with response
+      }).then(() => {
+            //set loading flag to false
+            this.loading = false;
+      })
+    }
+    },
+    data: {
+        loading: false
+    }
 });

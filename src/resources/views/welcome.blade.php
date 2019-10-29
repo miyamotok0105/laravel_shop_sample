@@ -96,6 +96,7 @@
                      data-currency="JPY">
                  </script>
                 </form>
+
             </div>
         </div>
     </body>

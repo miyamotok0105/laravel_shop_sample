@@ -2,21 +2,21 @@
 
 @section('content')
 <div class="container">
-
   <div class="container">
     <div class="row">
         <h4 class="col-md-3 mx-auto">店舗検索</h4>
         <div class="col-md-3 mx-auto">
             <form class="form-inline">
                 <div class="form-group">
-                <input type="text" name="keyword" value="{{ $keyword }}"
-                placeholder="検索したいキーワードを入力">
-                <input type="submit" value="検索" >
+                  <input class="form-control" type="text" name="keyword" value="{{ $keyword }}"
+                  placeholder="検索したいキーワードを入力">
+                  <input class="btn btn-primary" type="submit" value="検索" >
                 </div>
             </form>
         </div>
     </div>
   </div>
+
   <div class="container">
     @if($shops != null)
       @if(count($shops) > 0)
@@ -27,7 +27,7 @@
             <ul class="list-group shadow">
             @foreach($shops as $shop)
               <!-- list group item-->
-              <li class="list-group-item">
+              <li class="list-group-item item-box">
                 <!-- Custom content-->
                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                   <div class="media-body order-2 order-lg-1">
@@ -54,6 +54,6 @@
         </div>
       @endif
     @endif
-
+  </div>
 </div>
 @endsection
