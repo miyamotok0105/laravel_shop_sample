@@ -21,17 +21,22 @@
 
     @if($shops != null)
       @if(count($shops) > 0)
-        @foreach($shops as $shop)
-          <div class="row">
-            <div class="col-md-3">
-              {{ $shop->getId() }}
-            </div>
-            <div class="col-md-3">
-              {{ $shop->getName() }}
-            </div>
-          </div>
-          
-        @endforeach
+        <table class="table table-striped table-bordered" style="width:100%">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>店舗名</th>
+              </tr>
+          </thead>
+          <tbody>
+          @foreach($shops as $shop)
+              <tr>
+                  <td>{{ $shop->getId() }}</td>
+                  <td>{{ $shop->getName() }}</td>
+              </tr>
+          @endforeach
+          </tbody>
+        </table>
       @endif
     @endif
 

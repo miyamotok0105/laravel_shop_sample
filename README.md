@@ -449,6 +449,84 @@ php artisan db:seed --class=ShopsTableSeeder
 
 php artisan make:controller SearchController
 
+# elastic search
+
+参考
+https://madewithlove.be/how-to-integrate-elasticsearch-in-your-laravel-app-2019-edition/
+
+
+composer require elasticsearch/elasticsearch:7.1
+//composer require laravel/ui
+//php artisan ui:auth
+
+mはモデル作成、fはファクトリー作成。
+php artisan make:model -mf Article
+
+```:create_articles_table.php
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateArticlesTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('articles', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->text('body');
+            $table->json('tags');
+            $table->timestamps();
+        });
+    }
+}
+```
+
+
+```:Article.php
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Article extends Model
+{
+    protected $casts = [
+        'tags' => 'json',
+    ];
+}
+```
+
+
+```
+php artisan make:seeder ArticlesTableSeeder
+```
+
+```
+<?php
+
+use Illuminate\Database\Seeder;
+
+class ArticlesTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('articles')->truncate();
+        factory(App\Article::class)->times(50)->create();
+    }
+}
+```
+
+
+```:database/seeds/DatabaseSeeder.php
+public function run()
+{
+    $this->call(ArticlesTableSeeder::class);
+}
+```
 
 
 
@@ -460,3 +538,4 @@ https://hikopro.com/laravel-stripe/
 簡易フォーム
 https://www.itsolutionstuff.com/post/laravel-57-stripe-payment-gateway-integration-exampleexample.html
 
+B

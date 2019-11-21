@@ -31,14 +31,15 @@
                 <!-- Custom content-->
                 <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                   <div class="media-body order-2 order-lg-1">
+                    店舗名：
                     <h5 class="mt-0 font-weight-bold mb-2">{{ $shop->getId() }}</h5>
                     <p class="font-italic text-muted mb-0 small">{{ $shop->getName() }}</p>
                     <div class="d-flex align-items-center justify-content-between mt-1">
                       <h6 class="font-weight-bold my-2"></h6>
                       <ul class="list-inline small">
-                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success">11111111</i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success">222222</i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success">333333</i></li>
                         <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                         <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
                       </ul>

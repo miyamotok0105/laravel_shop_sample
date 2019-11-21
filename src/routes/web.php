@@ -29,4 +29,19 @@ Route::post('/pay', 'PaymentController@pay');
 Route::get('/paginate', 'SearchController@index')->name('search.index');
 Route::get('/paginateSimple', 'SearchController@indexSimple')->name('search.index');
 
+// elastic search
+use App\Articles\ArticlesRepository;
 
+Route::get('/articles', function () {
+    return view('articles.index', [
+        'articles' => App\Article::all(),
+    ]);
+});
+
+Route::get('/articles/search', function (ArticlesRepository $repository) {
+    $articles = $repository->search((string) request('q'));
+
+    return view('articles.index', [
+        'articles' => $articles,
+    ]);
+});
